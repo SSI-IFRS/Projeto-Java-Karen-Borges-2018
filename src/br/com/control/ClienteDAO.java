@@ -9,6 +9,14 @@ public class ClienteDAO implements interfaceDAO {
 
     private ArrayList lista = new ArrayList();
 
+    public ClienteDAO(ArrayList dados) {
+    	lista = dados;
+    }
+    
+    public ClienteDAO() {
+    	lista = new ArrayList();
+    }
+    
     @Override
     public boolean inserir(Object obj) {
         if (obj instanceof Cliente) {
