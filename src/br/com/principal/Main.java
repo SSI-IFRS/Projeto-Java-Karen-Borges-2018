@@ -1,7 +1,7 @@
 package br.com.principal;
 
-import br.com.control.PessoaDAO;
-import br.com.model.Pessoa;
+import br.com.control.*;
+import br.com.model.*;
 
 import java.util.ArrayList;
 import javax.swing.*;
@@ -14,6 +14,7 @@ public class Main extends ViewCliente{
 
 
         PessoaDAO cadastro = new PessoaDAO();
+        ClienteDAO cadastroCliente = new ClienteDAO();
         ViewCliente testeCliente = new ViewCliente();
         int opcao;
 
@@ -24,7 +25,7 @@ public class Main extends ViewCliente{
                             + "2 - Excluir\n"
                             + "3 - Pesquisar por CPF\n"
                             + "4 - Pesquisar por idade\n"
-                            + "5 - Cliente\n"
+                            + "5 - Lista Clientes\n"
                             + "6 - Sair");
 
             opcao = new Integer(input);
@@ -64,8 +65,7 @@ public class Main extends ViewCliente{
                            }
                     break;
                 case 5:
-                    //i = JOptionPane.showInputDialog(null, "Cliente: ");
-                    //ViewCliente cli = testeCliente;
+                    cadastroCliente = new ClienteDAO(ViewCliente.main());
                     JOptionPane.showMessageDialog(null, "Dados encontrados: " + ViewCliente.main());
                     break;
                 case 6:
