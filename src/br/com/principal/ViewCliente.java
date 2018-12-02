@@ -15,6 +15,7 @@ public class ViewCliente {
         c0.add(new Cliente(1,"Fulano","032465"));
         c0.add(new Cliente(2,"Beltrano","987456"));
         c0.add(new Cliente(3,"Ciclano","010203"));
+        c0.add(new Cliente(4,"Maria","492231"));
 
         return c0;
 
