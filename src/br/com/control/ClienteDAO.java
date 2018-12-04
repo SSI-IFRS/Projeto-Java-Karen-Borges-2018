@@ -67,4 +67,6 @@ public class ClienteDAO implements interfaceDAO {
     public boolean editar(Object obj) {
         return false;
     }
+
+    
 }

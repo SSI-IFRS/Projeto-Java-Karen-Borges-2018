@@ -4,7 +4,7 @@ import br.com.model.Cliente;
 
 import java.util.ArrayList;
 
-public class ViewCliente {
+public class InstanciaCliente {
 
     public static ArrayList<Cliente> main() {
         // create an array list type Cliente

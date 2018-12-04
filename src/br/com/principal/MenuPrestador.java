@@ -1,21 +1,19 @@
 package br.com.principal;
 
-import br.com.control.*;
-import br.com.model.*;
+import br.com.control.PessoaDAO;
+import br.com.control.PrestadorDAO;
+import br.com.model.Pessoa;
 
-import java.util.ArrayList;
 import javax.swing.*;
+import java.util.ArrayList;
 
-import static br.com.principal.ViewCliente.*;
+public class MenuPrestador extends InstanciaPrestador{
 
-public class Main extends ViewCliente{
-
-    public static void main(String[] args) {
-
+    public static void exibeMenuPrestador(){
 
         PessoaDAO cadastro = new PessoaDAO();
-        ClienteDAO cadastroCliente = new ClienteDAO();
-        ViewCliente testeCliente = new ViewCliente();
+        PrestadorDAO cadastroPrestador = new PrestadorDAO();
+        InstanciaPrestador testePrestador = new InstanciaPrestador();
         int opcao;
 
         do {
@@ -24,9 +22,10 @@ public class Main extends ViewCliente{
                             + "1 - Inserir\n"
                             + "2 - Excluir\n"
                             + "3 - Pesquisar por CPF\n"
-                            + "4 - Pesquisar por idade\n"
-                            + "5 - Lista Clientes\n"
-                            + "6 - Sair");
+                            + "4 - Pesquisar por CBO (Ocupação)\n"
+                            + "5 - Lista Prestador\n"
+                            + "6 - Voltar Menu Principal\n"
+                            + "7 - Sair");
 
             opcao = new Integer(input);
 
@@ -65,15 +64,17 @@ public class Main extends ViewCliente{
                            }
                     break;
                 case 5:
-                    cadastroCliente = new ClienteDAO(ViewCliente.main());
-                    JOptionPane.showMessageDialog(null, "Dados encontrados: " + ViewCliente.main());
+                    cadastroPrestador = new PrestadorDAO(InstanciaPrestador.main());
+                    JOptionPane.showMessageDialog(null, "Dados encontrados: " + InstanciaPrestador.main());
                     break;
                 case 6:
+                    InterfaceMenuPrincipal.exibir();
+                case 7:
                     System.exit(0);
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida");
             }
-        } while (opcao != 6);
+        } while (opcao != 7);
 
 
     }

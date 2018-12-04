@@ -5,6 +5,7 @@ public class Cliente extends Pessoa {
     private static int idClienteCount = 1;
 
     public static int getIdClienteCount() {
+        idClienteCount++;
         return idClienteCount;
     }
 
@@ -31,5 +32,14 @@ public class Cliente extends Pessoa {
         this.idCliente = idClienteCount++;
     }
 
+    @Override
+    public String toString() {
+        return (
+                "\nId Cliente = " + getIdClienteCount() +
+                "\nNome Cliente = " + getNome() +
+                "\nCPF Cliente = " + getCpf() +
+                "\n--------\n"
+        );
+    }
 }
 

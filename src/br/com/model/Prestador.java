@@ -1,11 +1,17 @@
 package br.com.model;
 
-public class Prestador extends Pessoa {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Prestador extends Pessoa implements Serializable {
+    List<DadosProfissionais> dadosProfissionaisList = new ArrayList();
+
     //Atributos
     private int idPrestador;
     private static int idPrestadorCount = 1;
-    private int cnpj;
-    private  String fone;
+    private String cnpj;
+    private String fone;
     private DadosAcademicos curso;
     private DadosProfissionais prof;
 
@@ -20,10 +26,10 @@ public class Prestador extends Pessoa {
         this.idPrestador = idPrestador;
     }
 
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -43,18 +49,24 @@ public class Prestador extends Pessoa {
         this.prof = prof;
     }
 
+    public void adicionarProfissao(DadosProfissionais dadosProfissionais){
+        this.dadosProfissionaisList.add(dadosProfissionais);
+    }
+
 
     //Construtores
 
-    public Prestador(int idPrestador, int cnpj, String fone, int codCadastro, String nome, String sobrenome, String dtNascimento, char genero, String email, String rg, String cpf, String experiencia) {
+    public Prestador(int idPrestador, String cnpj, String fone, int codCadastro, String nome, String sobrenome, String dtNascimento, char genero, String email, String rg, String cpf, String experiencia) {
         super(codCadastro, nome, sobrenome, dtNascimento, genero, email, fone, rg, cpf, experiencia);
         this.idPrestador = idPrestador;
         this.cnpj = cnpj;
         this.fone = fone;
     }
-    public Prestador(int idPessoa, String nome, String cpf) {
+    public Prestador(int idPessoa, String nome, String cpf, String cnpj, DadosProfissionais prof) {
         super(idPessoa, nome, cpf);
         this.idPrestador = idPrestadorCount++;
+        this.cnpj = cnpj;
+        this.prof = prof;
     }
 
     DadosAcademicos getcurso() {
@@ -66,6 +78,12 @@ public class Prestador extends Pessoa {
         return "Prestador{" + "idPrestador=" + idPrestador + ", curso=" + curso + ", prof=" + prof + '}';
     }
 
-
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 19 * hash + (this.cnpj != null ? this.fone.hashCode() : 0);
+        hash = 19 * hash + (this.cnpj != null ? this.fone.hashCode() : 0);
+        return hash;
+    }
 
 }

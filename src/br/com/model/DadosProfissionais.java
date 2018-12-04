@@ -7,9 +7,9 @@ package br.com.model;
 public class DadosProfissionais {
 
     private int idProfissional;
-    private String NomeEmpresa;
-    private String Funcao;
-    private String TempoServico;
+    private String nomeEmpresa;
+    private String cbo;
+    private String tempoServico;
 
     public int getIdProfissional() {
         return idProfissional;
@@ -20,39 +20,43 @@ public class DadosProfissionais {
     }
 
     public String getNomeEmpresa() {
-        return NomeEmpresa;
+        return nomeEmpresa;
     }
 
-    public void setNomeEmpresa(String NomeEmpresa) {
-        this.NomeEmpresa = NomeEmpresa;
+    public void setNomeEmpresa(String nomeEmpresa) {
+        this.nomeEmpresa = nomeEmpresa;
     }
 
-    public String getFuncao() {
-        return Funcao;
+    public String getCbo() {
+        return cbo;
     }
 
-    public void setFuncao(String Funcao) {
-        this.Funcao = Funcao;
+    public void setCbo(String cbo) {
+        this.cbo = cbo;
     }
+
     public String getTempoServico() {
-        return TempoServico;
+        return tempoServico;
     }
 
-    public void setTempoServico(String TempoServico) {
-        this.TempoServico = TempoServico;
+    public void setTempoServico(String tempoServico) {
+        this.tempoServico = tempoServico;
     }
 
 
-    public DadosProfissionais(int idProfissional, String NomeEmpresa, String Funcao, String TempoServico) {
+    public DadosProfissionais(int idProfissional, String nomeEmpresa, String cbo, String tempoServico) {
         this.idProfissional = idProfissional;
-        this.NomeEmpresa = NomeEmpresa;
-        this.Funcao = Funcao;
-        this.TempoServico = TempoServico;
+        this.nomeEmpresa = nomeEmpresa;
+        this.cbo = cbo;
+        this.tempoServico = tempoServico;
     }
 
-
+    public DadosProfissionais (int idProfissional, String cbo){
+        this.idProfissional = idProfissional;
+        this.cbo = cbo;
+    }
     @Override
     public String toString() {
-        return "DadosProfissionais{" + "idProfissional=" + idProfissional + ", NomeEmpresa=" + NomeEmpresa + ", Funcao=" + Funcao + ", TempoServico=" + TempoServico + '}';
+        return "DadosProfissionais{" + "idProfissional=" + idProfissional + ", NomeEmpresa=" + nomeEmpresa + ", Cbo=" + cbo + ", TempoServico=" + tempoServico + '}';
     }
 }
